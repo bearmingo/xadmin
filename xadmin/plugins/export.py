@@ -2,6 +2,7 @@ import io
 import datetime
 import sys
 from future.utils import iteritems
+from urllib.parse import quote
 
 from django.http import HttpResponse
 from django.template import loader
@@ -223,7 +224,7 @@ class ExportPlugin(BaseAdminPlugin):
         response = HttpResponse(
             content_type="%s; charset=UTF-8" % self.export_mimes[file_type])
 
-        file_name = self.opts.verbose_name.replace(' ', '_')
+        file_name = quote(self.opts.verbose_name.replace(' ', '_'))
         response['Content-Disposition'] = ('attachment; filename=%s.%s' % (
             file_name, file_type)).encode('utf-8')
 
