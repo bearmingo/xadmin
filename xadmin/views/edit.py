@@ -34,6 +34,7 @@ FORMFIELD_FOR_DBFIELD_DEFAULTS = {
     models.TextField: {'widget': widgets.AdminTextareaWidget},
     models.URLField: {'widget': widgets.AdminURLFieldWidget},
     models.IntegerField: {'widget': widgets.AdminIntegerFieldWidget},
+    models.DecimalField: {'widget': widgets.AdminNumberFieldWidget},
     models.BigIntegerField: {'widget': widgets.AdminIntegerFieldWidget},
     models.CharField: {'widget': widgets.AdminTextInputWidget},
     models.IPAddressField: {'widget': widgets.AdminTextInputWidget},

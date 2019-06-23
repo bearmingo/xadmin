@@ -204,6 +204,15 @@ class AdminIntegerFieldWidget(forms.TextInput):
         super(AdminIntegerFieldWidget, self).__init__(attrs=final_attrs)
 
 
+class AdminNumberFieldWidget(forms.NumberInput):
+
+    def __init__(self, attrs=None):
+        final_attrs = {'class': 'int-field'}
+        if attrs is not None:
+            final_attrs.update(attrs)
+        super(AdminNumberFieldWidget, self).__init__(attrs=final_attrs)
+
+
 class AdminCommaSeparatedIntegerFieldWidget(forms.TextInput):
 
     def __init__(self, attrs=None):
